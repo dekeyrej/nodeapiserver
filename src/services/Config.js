@@ -1,3 +1,3 @@
-const Config = require('../../config/secrets.json');
+import { Config } from '../../config/secrets.json';
 
 export default Config
