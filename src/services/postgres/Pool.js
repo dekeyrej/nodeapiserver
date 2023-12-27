@@ -1,8 +1,9 @@
 import pg from 'pg';
+import Config from '../Config.js';
 
-const dbhost = process.env.DBHOST;
-const dbuser = process.env.DBUSER;
-const dbpass = process.env.DBPASS;
+const dbhost = Config.db_host;
+const dbuser = Config.dbuser;
+const dbpass = Config.dbpass;
 
 const Pool = new pg.Pool({
     host: dbhost,

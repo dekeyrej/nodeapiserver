@@ -1,6 +1,7 @@
 import { createClient } from 'redis';
+import Config from '../Config.js';
 
-const rdhost = process.env.RDHOST;
+const rdhost = Config.rdhost;
 
 const client = createClient({
         url: `redis://${rdhost}:6379`
