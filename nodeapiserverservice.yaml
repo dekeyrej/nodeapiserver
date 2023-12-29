@@ -6,7 +6,7 @@ metadata:
 spec:
   clusterIP: None
   ports:
-  - port: 300
+  - port: 3002
     targetPort: 3002
     name: nodeapiserver
   selector:
