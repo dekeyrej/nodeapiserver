@@ -6,8 +6,8 @@ metadata:
 spec:
   clusterIP: None
   ports:
-  - port: 3000
-    targetPort: 3000
-    name: nodeapi
+  - port: 300
+    targetPort: 3002
+    name: nodeapiserver
   selector:
     k8s-app: nodeapiserver
