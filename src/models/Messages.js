@@ -1,5 +1,10 @@
-const Messages = [
+const messages = [
     'AQI', 'Calendar', 'Events', 'GitHub', 
-    'MLB', 'Moon', 'NFL', 'Weather'];
+    'MLB', 'Moon', 'NFL', 'Weather'
+];
 
-export default Messages
+export function includes(message) {
+    return messages.includes(message);
+}
+
+export default messages;

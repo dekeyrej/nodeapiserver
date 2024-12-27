@@ -11,4 +11,4 @@ const mountRoutes = (app) => {
   // etc..
 }
  
-export default mountRoutes
+export default mountRoutes;

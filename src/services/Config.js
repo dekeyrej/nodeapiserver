@@ -9,5 +9,4 @@ if (process.env.DEV == 1) {
     Config = JSON.parse(fs.readFileSync('./config/secrets.json', 'utf-8'));
 }
 
-
 export default Config
