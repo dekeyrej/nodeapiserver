@@ -16,7 +16,8 @@ let Data = {
     NFL: [],
     Calendar: [],
     Events: [],
-    // GitHub: {},
 };
 
 export default Data;
+
+    // GitHub: {},
