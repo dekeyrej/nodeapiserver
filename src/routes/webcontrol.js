@@ -1,7 +1,7 @@
-import PromiseRouter from "express-promise-router";
+import express from 'express';
 import Publish from "../services/redis/Publish.js";
 
-const router = new PromiseRouter();
+const router = new express.Router();
 
 export default router;
 

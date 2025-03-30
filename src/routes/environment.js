@@ -1,7 +1,7 @@
+import express from 'express';
 import Data from "../models/Data.js";
-import PromiseRouter from "express-promise-router";
 
-const router = new PromiseRouter();
+const router = new express.Router();
 const count = 5;
 
 export default router;

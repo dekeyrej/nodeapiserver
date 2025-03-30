@@ -1,8 +1,8 @@
+import express from 'express';
 import Data from "../models/Data.js";
 import NFLIndex from '../models/NFLIndex.js';
-import PromiseRouter from "express-promise-router";
 
-const router = new PromiseRouter();
+const router = new express.Router();
 
 router.get('/', async (req, res) => {
     const output = {

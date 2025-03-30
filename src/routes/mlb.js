@@ -1,8 +1,8 @@
+import express from 'express';
 import Data from "../models/Data.js";
 import MLBIndex from '../models/MLBIndex.js';
-import PromiseRouter from "express-promise-router";
 
-const router = new PromiseRouter();
+const router = new express.Router();
 
 export default router;
 
