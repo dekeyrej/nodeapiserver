@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-console.log(process.env);
+// console.log(process.env);
 
 const Config = {
     db_host: process.env.db_host,
