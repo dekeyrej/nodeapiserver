@@ -1,14 +1,14 @@
-import fs from 'fs';
+import dotenv from 'dotenv';
 
-let Config
+dotenv.config();
 
-// rassafrassing fs.readFileSync uses paths relative to project root?!?!?!
-if (process.env.DEV === "1") {
-    console.log('DEV MODE');
-    Config = JSON.parse(fs.readFileSync('./config/secrets.dev.json', 'utf-8'));
-} else {
-    console.log('PROD MODE');
-    Config = JSON.parse(fs.readFileSync('./config/secrets.json', 'utf-8'));
-}
+const Config = {
+    db_host: process.env.db_host,
+    db_port: process.env.db_port,
+    dbuser:  process.env.dbuser,
+    dbpass:  process.env.dbpass,
+    rhost:   process.env.rhost,
+    rpass:   process.env.rpass,
+};
 
-export default Config
+export default Config;

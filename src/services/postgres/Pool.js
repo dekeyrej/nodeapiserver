@@ -1,15 +1,13 @@
 import pg from 'pg';
 import Config from '../Config.js';
 
-const dbhost = Config.db_host;
-const dbuser = Config.dbuser;
-const dbpass = Config.dbpass;
+console.log(Config.db_host, Config.db_port, Config.dbuser, Config.dbpass);
 
 const Pool = new pg.Pool({
-    host: dbhost,
-    port: 5432,
-    user: dbuser,
-    password: dbpass,
+    host: Config.db_host,
+    port: Config.db_port,
+    user: Config.dbuser,
+    password: Config.dbpass,
     database: 'matrix',
 });
 

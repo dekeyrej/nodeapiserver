@@ -24,3 +24,4 @@ yarn-error.log*
 
 run_local.txt
 /config
+.env
