@@ -13,7 +13,7 @@ let Data = {
     Moon: {},
     Weather: {},
     MLB: [],
-    NFL: [],
+    NFL: {},
     Calendar: [],
     Events: [],
     GitHub: {},
