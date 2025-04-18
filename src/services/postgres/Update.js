@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+import Config from '../Config.js';
 import Data from '../../models/Data.js';
 import NFLTeams from '../../models/NFLTeams.js';
 import NFLIndex from '../../models/NFLIndex.js';
@@ -29,19 +30,13 @@ function ClearMLBIndex() {
 function MLBReindex() {
     const count = Data['MLB'].length
     for (let i = 0; i < count; i++) {   
-        // console.log(Data.MLB[i].id, Data.MLB[i].awayAbbreviation, Data.MLB[i].homeAbbreviation);
         MLBIndex[Data.MLB[i].awayAbbreviation] = Data.MLB[i].id;
         MLBIndex[Data.MLB[i].homeAbbreviation] = Data.MLB[i].id;
     }
-    // console.log(`Updated MLBIndex:`);
-    // for (let team in MLBTeams) {
-    //     console.log(MLBTeams[team], MLBIndex[MLBTeams[team]]);
-    // }
-    
 }
 
 export default async function Update(msgType) {
-    const querystr = "SELECT rectype, recupdate, recvalid, recvalues FROM feed WHERE rectype=$1";
+    const querystr = `SELECT rectype, recupdate, recvalid, recvalues FROM ${Config.dbtable} WHERE rectype=$1`;
     const result = await Query(querystr, [msgType]);
     Data[msgType] = result.rows[0].recvalues;
     if (msgType === 'NFL') {
@@ -51,7 +46,7 @@ export default async function Update(msgType) {
         ClearMLBIndex();
         MLBReindex();
     }
-    const now = DateTime.now().setZone('America/New_York');
+    const now = DateTime.now().setZone(Config.timezone);
     Data.updateTime = now.toLocaleString(DateTime.TIME_WITH_SECONDS);
     Data.updateDate = now.toLocaleString(DateTime.DATE_SHORT);
     console.log(`Updated ${msgType} @ ${now.toLocaleString(DateTime.TIME_WITH_SECONDS)}`);

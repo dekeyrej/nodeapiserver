@@ -8,7 +8,7 @@ const Pool = new pg.Pool({
     port: Config.db_port,
     user: Config.dbuser,
     password: Config.dbpass,
-    database: 'matrix',
+    database: Config.dbname,
 });
 
 export default Pool
