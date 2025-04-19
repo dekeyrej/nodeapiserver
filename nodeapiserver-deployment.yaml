@@ -29,6 +29,6 @@ spec:
               memory: 128Mi
         envFrom:
           - configMapRef:
-              name: api-config
+              name: common-config
       imagePullSecrets:
         - name: ghcr-login-secret
